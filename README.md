@@ -1,75 +1,96 @@
-# React + TypeScript + Vite
+# E-Commerce Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and fully functional Admin Panel built to manage the day-to-day operations of an e-commerce platform. This dashboard allows administrators to manage products, users, orders, and categories with a seamless UI powered by Shadcn UI and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Dashboard Overview**: Visual statistics for total sales, active users, and recent orders.
+* **Product Management**: Create, Read, Update, and Delete (CRUD) products with image support.
 
-## React Compiler
+* **Category Management**: Organize products into specific categories.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+* **User Management**: View and manage registered customer details.
 
-Note: This will impact Vite dev & build performances.
+* **Order Management**: Track order status (Pending, Shipped, Delivered) and view order details.
 
-## Expanding the ESLint configuration
+* **State Management**: Global state handling using Redux Toolkit for efficient data flow.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **Modern UI/UX**: Clean interface using Shadcn UI components and Tailwind CSS.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **API Integration**: Centralized API calls using Axios.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* **Frontend Framework**: React.js
+
+* **Build Tool**: Vite
+
+* **Styling**: Tailwind CSS
+
+* **UI Components**: Shadcn UI
+
+* **State Management**: Redux Toolkit
+
+* **HTTP Client**: Axios
+
+* **Icons**: Lucide React
+
+```bash
+src/
+├── assets/          # Static assets (images, icons)
+├── components/      # Reusable UI components (buttons, tables, cards)
+│   ├── ui/          # Shadcn UI primitives
+├── features/        # Redux slices (authSlice, productSlice, etc.)
+├── hooks/           # Custom React hooks
+├── layouts/         # Layout wrappers (Sidebar, Navbar)
+├── pages/           # Page components (Dashboard, Products, Orders)
+├── services/        # API configuration and Axios interceptors
+├── utils/           # Helper functions and constants
+├── App.jsx          # Main application component
+└── main.jsx         # Entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
+Follow these steps to set up the project locally.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Ensure you have the following installed:
+
+  * Node.js (v16 or higher)
+
+  * npm or yarn
+
+  * shopnet-api 
+
+### Installation
+1. Clone the repository
+```bash
+git clone https://github.com/[your-username]/[repo-name].git
+cd [repo-name]
+```
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+3. Configure Environment Variable
+Create a .env file in the root directory and add your API endpoint:
+```code
+VITE_API_BASE_URL=http://localhost:5000/api/v1
+```
+4. Start backend server
+Clone and start backend server from [repo](https://github.com/Yoganand20/ShopNet-API)
+
+5. Run the development server
+
+```bash
+npm run dev
+```
+
+6. Build for production
+
+```bash
+npm run build
 ```
