@@ -28,17 +28,11 @@ import { useDispatch, useSelector } from "react-redux"
 import type { AppDispatch, RootState } from "@/lib/store"
 
 
-
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const dispatch = useDispatch<AppDispatch>();
   const activeTable = useSelector((state: RootState) => state.table.activeTable);
 
   const data = {
-    user: {
-      name: "Yoganand",
-      email: "yoganandparab@email.com",
-      avatar: "/avatars/shadcn.jpg",
-    },
     navMain: [
       {
         title: "Categories",
@@ -99,7 +93,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+
+        <NavUser />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
