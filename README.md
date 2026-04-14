@@ -2,6 +2,9 @@
 
 A modern, responsive, and fully functional Admin Panel built to manage the day-to-day operations of an e-commerce platform. This dashboard allows administrators to manage products, users, orders, and categories with a seamless UI powered by Shadcn UI and Tailwind CSS.
 
+Server backend: https://github.com/Yoganand20/ShopNet-API
+Client fronend:
+
 ## Key Features
 
 * **Dashboard Overview**: Visual statistics for total sales, active users, and recent orders.
@@ -66,7 +69,7 @@ Ensure you have the following installed:
 ### Installation
 1. Clone the repository
 ```bash
-git clone https://github.com/[your-username]/[repo-name].git
+git clone https://github.com/Yoganand20/shopnet-admin.git
 cd [repo-name]
 ```
 2. Install dependencies
